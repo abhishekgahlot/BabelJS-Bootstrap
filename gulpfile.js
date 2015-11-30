@@ -10,7 +10,7 @@ gulp.task('build', function () {
     entries: './client/app/main.js',
     debug: true
   })
-  .transform(babelify)
+  .transform(babelify,  {presets: ["es2015"]})
   .bundle()
   .pipe(source('app.bundle.js'))
   .pipe(gulp.dest('./dist'));
